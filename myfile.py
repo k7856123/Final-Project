@@ -42,4 +42,62 @@ while x * x < y:
     x = x + 1
 print(y) 
 
+#problem 5
+"""2520 is the smallest number that can be divided by each of the 
+numbers from 1 to 10 without any remainder.
+What is the smallest positive number that is evenly divisible by 
+all of the numbers from 1 to 20?"""
+_range = range(10,21)
+x = 21
+y = False
+
+while y == False:
+    if x % 2520 == 0:
+        if all(x % z ==0 for z in _range):
+            y = True
+        else:
+            x = x + 2520
+    else:
+        x = x + 1
+print(x)
+
+#problem 7
+"""By listing the first six prime numbers: 2, 3, 5, 7, 
+11, and 13, we can see that the 6th prime is 13.
+What is the 10 001st prime number?"""
+def prime(x):
+    num = 2
+    for y in range(3, x**2, 2):
+        z = 1
+        while z*z < y:
+            z += 2
+            if y % z == 0:
+               break
+        else:
+            num += 1
+        if num == x:
+            return y
+print(prime(100001))
+
+#problem 10
+"""The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+Find the sum of all the primes below two million."""
+total = 2
+def prime(x):÷
+    if x % 2 == 0: return False
+    for y in range(3, int(x**0.5)+1, 2):
+        if x % y == 0: return False
+    return True
+if __name__ == "__main__":
+    x = 1
+    while x < 2000000:
+        x += 2
+        if prime(x):total += x
+print(total)
+
+
+
+
+
+
 
