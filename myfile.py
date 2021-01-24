@@ -1,9 +1,10 @@
 #kennedy becher
+# acknowledgement to stack overflow and smartick.com for helping me with prime numbers in code
 #problem 1
 """If we list all the natural numbers below 10 that are multiples of
 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23."""
 
-Find the sum of all the multiples of 3 or 5 below 1000.
+# Find the sum of all the multiples of 3 or 5 below 1000.
 all_sum = 0 #setting sum to zero
 for x in range(1000): #setting range and for statement
     if (x%3 ==0 or x%5 ==0): # finding multiples of 3 & 5
@@ -24,7 +25,7 @@ while z <=4000000: #cannot exceed four million
     z = y 
     if z % 2 == 0: #find even-valued terms
         sum += z #make z the sum
-    z = x + y 
+    z = x + y #redefine variables 
     x = y
     y = z
 print(sum) #printing variables added 
@@ -32,47 +33,47 @@ print(sum) #printing variables added
 #problem 3
 """The prime factors of 13195 are 5, 7, 13 and 29.
 What is the largest prime factor of the number 600851475143 ?"""
-x = 2 
+x = 2 #defining variables
 y = 600851475143
-while x * x < y:
-    while y % x == 0:
-        y = y / x
+while x * x < y: #multiply x by x and while loop less than y
+    while y % x == 0: #while loop y divided by x equals 0
+        y = y / x #redifining varibales
     x = x + 1
-print(y) 
+print(y) #print answer
 
 #problem 5
 """2520 is the smallest number that can be divided by each of the 
 numbers from 1 to 10 without any remainder.
 What is the smallest positive number that is evenly divisible by 
 all of the numbers from 1 to 20?"""
-_range = range(10,21)
+_range = range(10,21) #1-9 will inherently be divisible when 10-21 are divisible
 x = 21
-y = False
-while y == False:
-    if x % 2520 == 0:
-        if all(x % z ==0 for z in _range):
-            y = True
+y = False #boolean
+while y == False: #starting while loop
+    if x % 2520 == 0: #if statement, iterating through all nums that are divisible
+        if all(x % z ==0 for z in _range):#if each number is evenly divisible
+            y = True #boolean
         else:
-            x = x + 2520
+            x = x + 2520 #redefining variables
     else:
-        x = x + 1
-print(x)
+        x = x + 1 #continue adding 1 until y is true
+print(x) #print solution
 
 #problem 7
 """By listing the first six prime numbers: 2, 3, 5, 7, 
 11, and 13, we can see that the 6th prime is 13.
 What is the 10 001st prime number?"""
 def prime(x):
-    num = 2
-    for y in range(3, x**2, 2):
-        z = 1
-        while z*z < y:
+    num = 2 #defining num
+    for y in range(3, x**2, 2): #for loop for range to determine prime number
+        z = 1 #defining variable
+        while z*z < y: #while loop
             z += 2
             if y % z == 0:
-               break
+               break #terminates while loop 
         else:
             num += 1
-        if num == x:
+        if num == x: #if num is equal to the xth term
             return y
 print(prime(100001))
 
@@ -80,16 +81,16 @@ print(prime(100001))
 """The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 Find the sum of all the primes below two million."""
 total = 2
-def prime(x):÷
-    if x % 2 == 0: return False
-    for y in range(3, int(x**0.5)+1, 2):
+def prime(x): #testing to see if number is prime
+    if x % 2 == 0: return False #prime numbers cannot be even
+    for y in range(3, int(x**0.5)+1, 2): #for loop defining range
         if x % y == 0: return False
-    return True
+    return True #boolean
 if __name__ == "__main__":
-    x = 1
-    while x < 2000000:
-        x += 2
-        if prime(x):total += x
+    x = 1 #starting number
+    while x < 2000000: #all primes below 2000000
+        x += 2 #by adding 2 it will only test odd numbers
+        if prime(x):total += x #redefine value total 
 print(total)
 
 
